@@ -1,0 +1,30 @@
+<!--{panel}-->
+<div class='hd'>Сводка</div>
+<div class='bd'>
+	<div id="{i#widget}"></div>
+</div>
+
+<!--{widget}-->
+<div id="{i#id}" style="height: 420px; overflow-y: auto" class="online-list-widget">
+	<div id="{i#list}"><img src="/images/loading.gif" /> Идет загрузка данных. Пожалуйста, подождите...</div>
+</div>
+
+<!--{row}-->
+<div id="{i#id}" class="online-row" style="width: 370px;">
+	
+	<div id="{i#hd}" class="online-row-header onlineheader-{v#id} online-row-hshow">
+		<table style="width: 100%"><tbody><tr>
+		<td>
+			<span style="font-weight:bold; font-size:11px; color:#6A7398;" id="{i#tl}" >{v#title}</span>
+		</td>
+		<td>
+			<div id="{i#refresh}" style="text-align: right">
+				<a href="#" style="font-size:11px; color:#6A7398;" id="{i#brefresh}" >обновить</a>
+				<img id="{i#wait}" src="/images/loading.gif" style="display: none;"/>
+			</div>
+		</td>
+		</tr></tbody></table>
+		
+	</div>
+	<div id="{i#bd}" style="padding:10px 8px 15px;"></div>
+</div>

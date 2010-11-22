@@ -1,0 +1,21 @@
+.online-list-widget {
+}
+
+.online-list-widget .online-row {
+	margin: 5px; 
+	border-top:1px solid #9db1c0; 
+}
+
+.online-list-widget .online-row .online-row-header {
+	height: 17px; 
+	cursor:pointer; 
+	padding:3px 8px 3px 23px;
+}
+
+.online-list-widget .online-row .online-row-hshow {
+	background:none repeat scroll 0 0 #cadae5; 
+}		
+
+.online-list-widget .online-row .online-row-hhide {
+	background:none repeat scroll 0 0 #dddddd; 
+}		
