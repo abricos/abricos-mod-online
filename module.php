@@ -8,9 +8,6 @@
  * @author Alexander Kuzmin (roosit@abricos.org)
  */
 
-$mod = new OnlineModule();
-CMSRegistry::$instance->modules->Register($mod);
-
 class OnlineModule extends CMSModule {
 	
 	private $_manager;
@@ -67,5 +64,7 @@ class OnlinePermission extends CMSPermission {
 	}
 }
 
+$mod = new OnlineModule();
+CMSRegistry::$instance->modules->Register($mod);
 
 ?>
