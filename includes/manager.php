@@ -10,7 +10,7 @@
 
 require_once 'dbquery.php';
 
-class OnlineManager extends ModuleManager {
+class OnlineManager extends Ab_ModuleManager {
 	
 	/**
 	 * 
@@ -18,20 +18,10 @@ class OnlineManager extends ModuleManager {
 	 */
 	public $module = null;
 	
-	/**
-	 * User
-	 * @var User
-	 */
-	public $user = null;
-	public $userid = 0;
-	
 	private $_disableRoles = false;
 	
-	public function OnlineManager(OnlineModule $module){
-		parent::ModuleManager($module);
-		
-		$this->user = CMSRegistry::$instance->modules->GetModule('user');
-		$this->userid = $this->user->info['userid'];
+	public function __construct(OnlineModule $module){
+		parent::__construct($module);
 	}
 	
 	public function DisableRole(){
@@ -39,11 +29,11 @@ class OnlineManager extends ModuleManager {
 	}
 	
 	public function IsAdminRole(){
-		return $this->module->permission->CheckAction(OnlineAction::ADMIN) > 0;
+		return $this->IsRoleEnable(OnlineAction::ADMIN);
 	}
 	
 	public function IsWriteRole(){
-		return $this->module->permission->CheckAction(OnlineAction::WRITE) > 0;
+		return $this->IsRoleEnable(OnlineAction::WRITE);
 	}
 	
 	public function DSProcess($name, $rows){

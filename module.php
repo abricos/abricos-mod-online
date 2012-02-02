@@ -8,12 +8,12 @@
  * @author Alexander Kuzmin (roosit@abricos.org)
  */
 
-class OnlineModule extends CMSModule {
+class OnlineModule extends Ab_Module {
 	
 	private $_manager;
 	
 	function __construct(){
-		$this->version = "0.1";
+		$this->version = "0.1.1";
 		$this->name = "online";
 		
 		$this->permission = new OnlinePermission($this);
@@ -64,7 +64,6 @@ class OnlinePermission extends CMSPermission {
 	}
 }
 
-$mod = new OnlineModule();
-CMSRegistry::$instance->modules->Register($mod);
+Abricos::ModuleRegister(new OnlineModule());
 
 ?>
